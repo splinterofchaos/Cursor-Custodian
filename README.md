@@ -17,6 +17,17 @@ After installing [Mingw64](https://sourceforge.net/projects/mingw-w64/files/Tool
 g++ -c src/*.cpp -std=c++14 -O3 -Wall -m64 -I include -I C:/SDL2-w64/include && g++ *.o -o bin/release/main -s -L C:/SDL2-w64/lib -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer && start bin/release/main
 ```
 The compiled ``.exe`` is located in ``/bin``. For it to run, you must copy the ``/res`` folder as well as all ``.dll`` files from your SDL installation to its directory.
+### Linux
+Install the SDL libraries, SDL2, SDL2-ttf, SDL2-image, and SDL2-mixer. On
+Ubuntu or Debian-based distros, that's:
+```
+sudo apt install libsdl2-dev libsdl2-mixer-dev libsdl2-image-dev libsdl2-ttf-dev
+```
+
+To compile and run:
+```
+g++ -c src/*.cpp -std=c++14 -O3 -Wall -m64 -I include && g++ *.o -o bin/release/main -s -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer && ./bin/release/main
+```
 ### Web
 Install [emscripten](https://emscripten.org/docs/getting_started/downloads.html) and execute the following command in the project's root directory:
 ```
